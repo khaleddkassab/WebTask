@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CSS with JS & jQ</title>
+
+	<script type="text/javascript" src="jquery-3.4.1.js"></script>
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		
+
+		main {
+			display: flex;
+
+		}
+
+		.outerDiv {
+			display: flex;
+		}
+
+		.leftDiv {
+			flex: 1;
+			padding: 10px;
+		}
+
+		.leftDiv img {
+			float: left;
+			margin-right: 10px;
+		}
+		
+		.leftDiv {
+			flex: 1;
+			padding: 20px;
+		}
+
+		.leftDiv img {
+			width: 50%;
+			max-width: 300px;
+			height: auto;
+			margin-bottom: 20px;
+			border: 3px solid #ccc;
+		}
+
+		.rightDiv {
+			flex: 1;
+			padding: 20px;
+			border-left: 1px solid #ccc;
+		}
+
+		footer {
+			color: white;
+			text-align: center;
+			padding: 10px;
+			font-size: larger;
+			font: optional;
+		}
+
+		.social-buttons {
+			margin-top: 20px;
+			background-color: white;border-color: black;border-radius: 0.5cm;
+		}
+
+		button {
+			display: inline-block;
+			padding: 10px 20px;
+			margin-right: 10px;
+			background-color: #ccc;
+			color: white;
+			text-decoration: none;
+			border: none;
+			cursor: pointer;
+			font-size: 14px;
+			border-radius: 5px;
+		}
+
+		.twitter-button {
+			background-color: #ccc;
+		}
+
+
+		.leftDiv {
+			flex: 1;
+			padding: 20px;
+			border-right: 3px solid red;
+		}
+
+		.rightDiv {
+			flex: 1;
+			padding: 20px;
+		}
+
+
+		.rightDiv h2 {
+			border-bottom: 2px solid green;
+			width: 185px;
+
+		}
+
+
+		h2 {
+			color: green;
+		}
+	</style>
+</head>
+
+<body>
+
+	<header>
+		<h1></h1>
+	</header>
+
+	<main style="align-items: center;">
+		<div class="leftDiv">
+			<img src="https://picsum.photos/300/200" alt="Random Image" style="height: 7cm;">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+				ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+				fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+				deserunt
+				mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+				ullamco laboris
+			</p>
+		</div>
+
+		<div class="rightDiv">
+			<h2>Announcements</h2>
+			<ul>
+				<li>Al Ahly Egyptian club is 11-time African Champions League cup winner.</li>
+				<li>Big Ramy is the Mr. Olympia of 2021 for the 2<sup>nd</sup> time in a row.</li>
+			</ul>
+
+			<div class="social-buttons" >
+				<button class="facebook-button" ><a href="https://facebook.com" target="_blank">Facebook
+						Page</a></button>
+				<button class="twitter-button" ><a href="https://twitter.com" target="_blank">Twitter Page</a></button>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<form action="mailto:a.farouk@fci-cu.edu.eg">
+			<input type="submit" name="contactBtn" value="Contact: a.farouk@fci-cu.edu.eg" style="font-size: xx-large;color: aqua;font-style: italic;background-color: transparent;border-color: transparent;">
+		</form>
+	</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS & jQuery Task</title>
+    <script type="text/javascript" src="jquery-3.4.1.js"></script>
+</head>
+<body>
+
+    <h3 id="verificationCode">ppso4457523</h3>
+    <form name='verifyForm' onsubmit="return verifyFn()">
+        <input type="text" name="codeName" placeholder="code" oninput="updateMessage()">
+        <input type="submit" name="verifyBtn" value="Verify">
+    </form>
+
+    <!-- New element to display messages -->
+    <div id="message"></div>
+
+    <script type="text/javascript">
+
+        function verifyFn() {
+            // Get the entered code from the input field
+            var input = document.forms['verifyForm']['codeName'].value;
+
+            // Check if the entered code has at least 5 characters
+            if (input.length >= 5) {
+                // Display success message with green font color
+                document.getElementById('message').innerHTML = '<span style="color:green;">Verification successful!</span>';
+                // Redirect to the specified page upon successful verification
+                window.location.href = 'secondPage.html';
+                return false; // Prevent form submission
+            } else {
+                // Display failure message with red font color
+                document.getElementById('message').innerHTML = '<span style="color:red;">Verification failed. Please enter at least 5 characters.</span>';
+                return false; // Prevent form submission
+            }
+        }
+
+        function updateMessage() {
+            // Get the entered code from the input field
+            var input = document.forms['verifyForm']['codeName'].value;
+
+            // Update the message in real-time based on the input length
+            if (input.length >= 5) {
+                // Display success message with green font color
+                document.getElementById('message').innerHTML = '<span style="color:green;">Verification successful!</span>';
+            } else {
+                // Display failure message with red font color
+                document.getElementById('message').innerHTML = '<span style="color:red;">Please enter at least 5 characters.</span>';
+            }
+        }
+
+        // Alternatively, using jQuery for the entire script
+        $(document).ready(function(){
+            $('form[name="verifyForm"]').submit(function(event) {
+                // Prevent the default form submission
+                event.preventDefault();
+
+                // Get the entered code using jQuery
+                var enteredCode = $('input[name="codeName"]').val();
+
+                // Check if the entered code has at least 5 characters
+                if (enteredCode.length >= 5) {
+                    // Display success message with green font color
+                    $('#message').html('<span style="color:green;">Verification successful!</span>');
+                    // Redirect to the specified page upon successful verification
+                    window.location.href = 'secondPage.html';
+                } else {
+                    // Display failure message with red font color
+                    $('#message').html('<span style="color:red;">Verification failed. Please enter at least 5 characters.</span>');
+                }
+            });
+
+            // Add an input event listener to the text input for real-time updates
+            $('input[name="codeName"]').on('input', function() {
+                updateMessage();
+            });
+        });
+
+    </script>
+
+</body>
+</html>
